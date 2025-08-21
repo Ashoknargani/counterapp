@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    form {
+      background-color: antiquewhite;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="file"] {
+      border: 10px;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: green;
+    }
+
+    button[type="reset"] {
+      background-color: red;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <h2>Student Registration Form</h2>
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+
+    <label>Gender:</label>
+    <div class="radio-group">
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+    </div>
+
+    <label for="department">Department:</label>
+    <select id="department" name="department">
+      <option value="">--Select--</option>
+      <option value="cse">Computer Science</option>
+      <option value="ece">Electronics</option>
+      <option value="eee">Electrical</option>
+      <option value="mech">Mechanical</option>
+      <option value="civil">Civil</option>
+    </select>
+
+    <label>Skills:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" id="html" name="skills" value="HTML">
+      <label for="html">HTML</label>
+
+      <input type="checkbox" id="css" name="skills" value="CSS">
+      <label for="css">CSS</label>
+
+      <input type="checkbox" id="js" name="skills" value="JavaScript">
+      <label for="js">JavaScript</label>
+
+      <input type="checkbox" id="react" name="skills" value="React">
+      <label for="react">React</label>
+    </div>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" cols="30"></textarea>
+
+    <label for="photo">Upload Photo:</label>
+    <input type="file" id="photo" name="photo">
+
+    <div class="button-group">
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+    </div>
+
+  </form>
+
+</body>
+</html>
+
+<script>
+    const form = document.getElementById("fullname").value.trim();
+    form.addEventListener("submit", addStudentDetails);
+
+    function addStudentDetails(event) {
+        event.preventDefault();
+
+        let name_var       = document.getElementById("fullname").value.trim();
+        let email_var      = document.getElementById("email").value.trim();
+        let password_var   = document.getElementById("password").value.trim();
+        let dob_var        = document.getElementById("dob").value.trim();
+        let dept_var       = document.getElementById("dept").value.trim();
+        let address_var    = document.getElementById("address").value.trim();
+
+        let gender_var     = document.querySelector('input[name="gender"]:checked');
+        let skills_var     = document.querySelectorAll('input[name="skills"]:checked');
+
+        let selectedSkills = [];
+        for (let skill of skills_var) {
+            selectedSkills.push(skills.value);
+        }
+ }
+ let student = {
+    name
+ }
+</script>
